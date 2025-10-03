@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Githue",
+  "description": "Customize GitHub's theme colors with HEX-level control. Supports quick and advanced editing.",
+  "version": "1.0.0",
+  "icons": {
+    "16": "ui/icons/icon-16.png",
+    "48": "ui/icons/icon-48.png",
+    "128": "ui/icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "ui/popup.html",
+    "default_icon": {
+      "16": "ui/icons/icon-16.png",
+      "48": "ui/icons/icon-48.png",
+      "128": "ui/icons/icon-128.png"
+    }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://github.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["src/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "themes/*.json",
+        "ui/icons/*.png"
+      ],
+      "matches": ["https://github.com/*"]
+    }
+  ]
+}
