@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/popup.css">
+	<link rel="stylesheet" href="css/scrollbar.css">
+</head>
+
+<body>
+	<header>
+		<div id="top">
+			<h2>GitHue</h2>
+			<div id="ex_toggle">
+				<div id="thumb"></div>
+			</div>
+		</div>
+		<div id="tab">
+			<div id="quick" class="tabs selected">簡易設定</div>
+			<div id="advanced" class="tabs">詳細設定</div>
+		</div>
+	</header>
+    <div id="disabled"></div>
+	<div id="main" class="advanced_menu" style="display: none;">
+        <div>
+            <p>ページ全体の背景</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-default">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-default">
+            </div>
+        </div>
+
+        <div>
+            <p>サイドバーや補助領域</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-muted">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-muted">
+            </div>
+        </div>
+
+        <div>
+            <p>入れ子構造の背景（カードなど）</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-inset">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-inset">
+            </div>
+        </div>
+
+        <div>
+            <p>強調領域の背景</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-emphasis">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-emphasis">
+            </div>
+        </div>
+
+        <div>
+            <p>モーダルやドロップダウンの背景</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-overlay">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-overlay">
+            </div>
+        </div>
+
+        <div>
+            <p>警告・注意（強調）</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-attention-emphasis">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-attention-emphasis">
+            </div>
+        </div>
+
+        <div>
+            <p>警告・注意（控えめ）</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-attention-muted">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-attention-muted">
+            </div>
+        </div>
+
+        <div>
+            <p>成功メッセージ（強調）</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-success-emphasis">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-success-emphasis">
+            </div>
+        </div>
+
+        <div>
+            <p>成功メッセージ（控えめ）</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-success-muted">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-success-muted">
+            </div>
+        </div>
+
+        <div>
+            <p>エラー領域（強調）</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-danger-emphasis">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-danger-emphasis">
+            </div>
+        </div>
+
+        <div>
+            <p>エラー領域（控えめ）</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-danger-muted">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-danger-muted">
+            </div>
+        </div>
+
+        <div>
+            <p>中立メッセージ（強調）</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-neutral-emphasis">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-neutral-emphasis">
+            </div>
+        </div>
+
+        <div>
+            <p>中立メッセージ（控えめ）</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-neutral-muted">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-neutral-muted">
+            </div>
+        </div>
+
+        <div>
+            <p>完了ステータス（強調）</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-done-emphasis">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-done-emphasis">
+            </div>
+        </div>
+
+        <div>
+            <p>完了ステータス（控えめ）</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-done-muted">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-done-muted">
+            </div>
+        </div>
+
+        <div>
+            <p>深刻な警告（強調）</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-severe-emphasis">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-severe-emphasis">
+            </div>
+        </div>
+
+        <div>
+            <p>深刻な警告（控えめ）</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-severe-muted">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-severe-muted">
+            </div>
+        </div>
+
+        <div>
+            <p>スポンサー関連（強調）</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-sponsors-emphasis">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-sponsors-emphasis">
+            </div>
+        </div>
+
+        <div>
+            <p>スポンサー関連（控えめ）</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-sponsors-muted">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-sponsors-muted">
+            </div>
+        </div>
+
+        <div>
+            <p>透明背景</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-transparent">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-transparent">
+            </div>
+        </div>
+
+        <div>
+            <p>白背景</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-white">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-white">
+            </div>
+        </div>
+
+        <div>
+            <p>黒背景</p>
+            <div id="edit">
+                <input type="text" data-src="bgColor-black">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="bgColor-black">
+            </div>
+        </div>
+
+        <!-- fgColor -->
+
+        <div>
+            <p>通常テキスト色</p>
+            <div id="edit">
+                <input type="text" data-src="fgColor-default">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="fgColor-default">
+            </div>
+        </div>
+
+        <div>
+            <p>補助テキスト色</p>
+            <div id="edit">
+                <input type="text" data-src="fgColor-muted">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="fgColor-muted">
+            </div>
+        </div>
+
+        <div>
+            <p>より控えめなテキスト色</p>
+            <div id="edit">
+                <input type="text" data-src="fgColor-subtle">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="fgColor-subtle">
+            </div>
+        </div>
+
+        <div>
+            <p>強調領域上の文字色</p>
+            <div id="edit">
+                <input type="text" data-src="fgColor-onEmphasis">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="fgColor-onEmphasis">
+            </div>
+        </div>
+
+        <div>
+            <p>リンク色</p>
+            <div id="edit">
+                <input type="text" data-src="fgColor-link">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="fgColor-link">
+            </div>
+        </div>
+
+        <div>
+            <p>白文字</p>
+            <div id="edit">
+                <input type="text" data-src="fgColor-white">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="fgColor-white">
+            </div>
+        </div>
+
+        <div>
+            <p>非アクティブ状態の文字色</p>
+            <div id="edit">
+                <input type="text" data-src="fgColor-disabled">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="fgColor-disabled">
+            </div>
+        </div>
+
+        <div>
+            <p>成功メッセージの文字色</p>
+            <div id="edit">
+                <input type="text" data-src="fgColor-success">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="fgColor-success">
+            </div>
+        </div>
+
+        <div>
+            <p>エラーの文字色</p>
+            <div id="edit">
+                <input type="text" data-src="fgColor-danger">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="fgColor-danger">
+            </div>
+        </div>
+
+        <div>
+            <p>警告の文字色</p>
+            <div id="edit">
+                <input type="text" data-src="fgColor-attention">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="fgColor-attention">
+            </div>
+        </div>
+
+        <!-- borderColor -->
+
+        <div>
+            <p>通常の境界線</p>
+            <div id="edit">
+                <input type="text" data-src="borderColor-default">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="borderColor-default">
+            </div>
+        </div>
+
+        <div>
+            <p>控えめな境界線</p>
+            <div id="edit">
+                <input type="text" data-src="borderColor-muted">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="borderColor-muted">
+            </div>
+        </div>
+
+        <div>
+            <p>より薄い境界線</p>
+            <div id="edit">
+                <input type="text" data-src="borderColor-subtle">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="borderColor-subtle">
+            </div>
+        </div>
+
+        <div>
+            <p>強調された境界線</p>
+            <div id="edit">
+                <input type="text" data-src="borderColor-emphasis">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="borderColor-emphasis">
+            </div>
+        </div>
+
+        <div>
+            <p>モーダルなどの境界線</p>
+            <div id="edit">
+                <input type="text" data-src="borderColor-overlay">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="borderColor-overlay">
+            </div>
+        </div>
+
+        <div>
+            <p>セクション分割線</p>
+            <div id="edit">
+                <input type="text" data-src="borderColor-divider">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="borderColor-divider">
+            </div>
+        </div>
+
+        <div>
+            <p>成功メッセージの枠線</p>
+            <div id="edit">
+                <input type="text" data-src="borderColor-success">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="borderColor-success">
+            </div>
+        </div>
+
+        <div>
+            <p>エラーの枠線</p>
+            <div id="edit">
+                <input type="text" data-src="borderColor-danger">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="borderColor-danger">
+            </div>
+        </div>
+
+        <div>
+            <p>警告の枠線</p>
+            <div id="edit">
+                <input type="text" data-src="borderColor-attention">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="borderColor-attention">
+            </div>
+        </div>
+
+        <!-- header -->
+
+        <div>
+            <p>ヘッダー背景色</p>
+            <div id="edit">
+                <input type="text" data-src="header-bgColor">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="header-bgColor">
+            </div>
+        </div>
+
+        <div>
+            <p>ヘッダー内の文字色</p>
+            <div id="edit">
+                <input type="text" data-src="header-fgColor-logo">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="header-fgColor-logo">
+            </div>
+        </div>
+
+        <div>
+            <p>ヘッダー下部の境界線</p>
+            <div id="edit">
+                <input type="text" data-src="header-borderColor-divider">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="header-borderColor-divider">
+            </div>
+        </div>
+
+        <div>
+            <p>検索バー背景</p>
+            <div id="edit">
+                <input type="text" data-src="headerSearch-bgColor">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="headerSearch-bgColor">
+            </div>
+        </div>
+
+        <div>
+            <p>検索バー枠線</p>
+            <div id="edit">
+                <input type="text" data-src="headerSearch-borderColor">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="headerSearch-borderColor">
+            </div>
+        </div>
+
+        <!-- button -->
+
+        <div>
+            <p>プライマリボタン背景</p>
+            <div id="edit">
+                <input type="text" data-src="button-primary-bgColor-rest">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="button-primary-bgColor-rest">
+            </div>
+        </div>
+
+        <div>
+            <p>プライマリボタン文字色</p>
+            <div id="edit">
+                <input type="text" data-src="button-primary-fgColor-rest">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="button-primary-fgColor-rest">
+            </div>
+        </div>
+
+        <div>
+            <p>アウトラインボタン文字色</p>
+            <div id="edit">
+                <input type="text" data-src="button-outline-fgColor-rest">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="button-outline-fgColor-rest">
+            </div>
+        </div>
+
+        <!-- control -->
+
+        <div>
+            <p>star / watch ボタン背景</p>
+            <div id="edit">
+                <input type="text" data-src="control-bgColor-rest">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="control-bgColor-rest">
+            </div>
+        </div>
+
+
+	</div>
+	<div id="main" class="quick_menu">
+		<div>
+			<p>ベースカラー</p>
+			<div id="edit">
+				<input type="text">
+				<div class="color_pallet"></div>
+				<input type="color" id="quickBg">
+			</div>
+		</div>
+		<div>
+			<p>文字色</p>
+			<div id="edit">
+                <input type="color" id="quickFg">
+                <div id="black" class="charcolor">黒</div>
+                <div id="white" class="charcolor">白</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div style="font-size: smaller; text-align: right; margin-right: 10px;">Githue created by kyonshi.</div>
+
+	<script src="js/popup.js"></script>
+</body>
+
+</html>

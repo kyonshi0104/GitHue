@@ -17,7 +17,8 @@
     }
   },
   "permissions": [
-    "storage"
+    "storage",
+    "activeTab"
   ],
   "host_permissions": [
     "https://github.com/*"
@@ -26,9 +27,12 @@
     {
       "matches": ["https://github.com/*"],
       "js": ["src/content.js"],
-      "run_at": "document_idle"
+      "run_at": "document_end"
     }
   ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
   "web_accessible_resources": [
     {
       "resources": [

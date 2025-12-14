@@ -1,0 +1,204 @@
+html,
+body {
+    margin: 0;
+}
+
+
+body {
+    background-color: #212830;
+    color: #bdc4cc;
+
+    width: 350px;
+    height: 500px;
+
+    border: solid 3px #ffffff;
+}
+
+
+#top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+#ex_toggle {
+    width: 60px;
+    height: 15px;
+    background-color: #6d6d6d;
+
+    margin: auto;
+    margin-right: 30px;
+
+    border-radius: 4px;
+    transition: background-color 0.1s ease;
+}
+
+
+#thumb {
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    background-color: #d1d9e2;
+    border-radius: 4px;
+
+    transform: translateY(-5px);
+    transition: transform 0.15s ease;
+}
+
+
+#ex_toggle.enabled {
+    background-color: #7d90a5;
+}
+
+
+#ex_toggle.enabled #thumb {
+    transform: translate(35px, -5px);
+}
+
+
+header {
+    border-bottom: solid 2px #9fa4aa;
+    text-align: left;
+
+    width: 350px;
+}
+
+
+header h2 {
+    margin: 10px 20px;
+}
+
+
+#main {
+    height: 390px;
+    overflow-y: auto;
+}
+
+
+#main div p {
+    margin: 10px;
+}
+
+
+input[type="color"] {
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+
+    width: 0;
+    height: 0;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+input[type="text"] {
+    background-color: #303644;
+    border: solid 1px #505357;
+    border-radius: 10px;
+
+    width: 200px;
+    height: 30px;
+
+    margin-left: 10px;
+    outline: none;
+
+    color: #bdc4cc;
+    font-size: 15px;
+}
+
+
+#edit {
+    display: flex;
+}
+
+
+.color_pallet {
+    border: solid 1px #ffffff;
+
+    margin-left: 15px;
+
+    width: 100px;
+    height: 33px;
+
+    border-radius: 7px;
+    background-color: #ffffff;
+
+    cursor: pointer;
+}
+
+
+#tab {
+    display: grid;
+    width: 350px;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+
+.tabs {
+    height: 20px;
+
+    text-align: center;
+    padding: 10px;
+
+    transition: background-color 0.1s ease-in-out;
+}
+
+
+.tabs:hover:not(.selected) {
+    background-color: rgba(158, 148, 148, 0.2);
+}
+
+
+.selected {
+    background-color: #595a5c;
+}
+
+
+.charcolor {
+    width: 150px;
+    height: 90px;
+
+    text-align: center;
+    font-size: x-large;
+
+    margin: auto;
+
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+#black {
+    background-color: #000000;
+    color: #d1d9e2;
+}
+
+
+#white {
+    background-color: #d1d9e2;
+    color: #000000;
+}
+
+
+.charcolor.selected {
+    border: solid 2px #476db8;
+
+    width: 146px;
+    height: 86px;
+}
+
+
+#disabled {
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.3);
+}
