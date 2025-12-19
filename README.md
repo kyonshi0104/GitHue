@@ -40,32 +40,6 @@ Chrome ウェブストア公開前の暫定的なインストール方法です�
 
 ---
 
-## 🖼 スクリーンショット
-（※ 後で画像を追加してください）
-
-```
-/screenshots/
-  ├── screenshot1.png
-  ├── screenshot2.png
-  └── screenshot3.png
-```
-
-例：
-```
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
-```
-
----
-
-## 🧩 今後の予定
-- Chrome ウェブストアでの公開  
-- 英語 UI の追加  
-- カラープリセット機能の追加  
-- より細かい GitHub UI のカスタマイズ
-
----
-
 ## 📄 ライセンス
 このプロジェクトは **BSD-3-Clause License** のもとで公開されています。  
 詳細は `LICENSE` ファイルをご確認ください。
@@ -105,32 +79,6 @@ This is a temporary installation method before publishing to the Chrome Web Stor
 6. Click **Load unpacked**  
 7. Select the extracted folder (the one containing `manifest.json`)  
 8. The extension will be loaded and ready to use
-
----
-
-## 🖼 Screenshots
-(Add images later)
-
-```
-/screenshots/
-  ├── screenshot1.png
-  ├── screenshot2.png
-  └── screenshot3.png
-```
-
-Example:
-```
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
-```
-
----
-
-## 🧩 Future Plans
-- Publish on the Chrome Web Store  
-- Add English UI  
-- Add color presets  
-- More detailed GitHub UI customization
 
 ---
 
