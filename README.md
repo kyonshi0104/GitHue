@@ -24,6 +24,7 @@ GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
 
 
 ## 📥 インストール方法
+これはgoogle chromeにおけるインストール方法です。edgeやその他のブラウザでは方法が異なる可能性があります。
 
 1. このリポジトリを **Clone** または **ZIP ダウンロード**  
 2. ZIP を解凍（または Clone したフォルダをそのまま使用）  
@@ -61,6 +62,7 @@ Currently, the extension **supports Japanese only**.
 ---
 
 ## 📥 Installation
+This is the installation method for Google Chrome. The method may differ for Edge and other browsers.
 
 1. Clone this repository or download the ZIP  
 2. Extract the ZIP (or use the cloned folder directly)  
