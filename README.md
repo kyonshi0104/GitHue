@@ -19,6 +19,7 @@ GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
 
 ---
 
+##　🖼 スクリーンショット
 <img width="1919" height="990" alt="image" src="https://github.com/user-attachments/assets/dc9cc320-811f-4e94-89b1-149e1cd14f81" />
 
 
