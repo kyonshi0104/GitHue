@@ -3,7 +3,6 @@
 # Githue
 GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
 
-<!-- バッジここに貼る -->
 <p align="left">
   <img src="https://img.shields.io/badge/license-BSD--3--Clause-blue" alt="License: BSD-3-Clause">
   <img src="https://img.shields.io/badge/Chrome-supported-brightgreen" alt="Chrome Supported">
@@ -11,20 +10,16 @@ GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
   <img src="https://img.shields.io/badge/language-Japanese_only-orange" alt="Language: Japanese Only">
   <img src="https://img.shields.io/badge/status-active-success" alt="Status: Active">
 </p>
+
 ## 📌 概要
-**Githue** は、GitHub のテーマカラーを自分好みに変更できる拡張機能です。  
-完全にクライアントサイドで動作し、外部サーバーへの通信は行いません。  
+**Githue** は、GitHub のテーマカラーを変更できる拡張機能です。  
 現在は **日本語のみ対応** しています。
 
-- GitHub の配色を自由に調整  
-- ダーク/ライトテーマの微調整  
-- 完全クライアントサイドで安全  
 - Chrome / Edge で動作確認済み
 
 ---
 
-## 📥 インストール方法（GitHub 配布版）
-Chrome ウェブストア公開前の暫定的なインストール方法です。
+## 📥 インストール方法
 
 1. このリポジトリを **Clone** または **ZIP ダウンロード**  
 2. ZIP を解凍（または Clone したフォルダをそのまま使用）  
@@ -54,19 +49,14 @@ Chrome ウェブストア公開前の暫定的なインストール方法です�
 A Chrome extension that lets you customize GitHub’s color theme
 
 ## 📌 Overview
-**Githue** is a browser extension that allows you to freely customize GitHub’s color palette.  
-It works **entirely on the client side**, with **no external communication**.  
+**Githue** is a browser extension that allows you to customize GitHub’s color palette.  
 Currently, the extension **supports Japanese only**.
 
-- Customize GitHub’s theme colors  
-- Fine‑tune dark/light themes  
-- Fully client‑side and safe  
 - Tested on Chrome and Edge
 
 ---
 
-## 📥 Installation (GitHub distribution)
-This is a temporary installation method before publishing to the Chrome Web Store.
+## 📥 Installation
 
 1. Clone this repository or download the ZIP  
 2. Extract the ZIP (or use the cloned folder directly)  
