@@ -17,6 +17,9 @@ GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
 
 - Chrome / Edge で動作確認済み
 
+※本バージョンは初期リリースです。今後のアップデートにて、機能追加やUI改善などを継続的に行っていきます。
+(This version marks the first public release. We plan to expand functionality and enhance the UI over time.)
+
 ---
 
 ## 🖼 スクリーンショット
