@@ -19,9 +19,19 @@ GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
 
 ---
 
+## 🖼 スクリーンショット
+<img width="1919" height="990" alt="image" src="https://github.com/user-attachments/assets/dc9cc320-811f-4e94-89b1-149e1cd14f81" />
+
+---
+
 ## 📥 インストール方法
+これは Google Chrome におけるインストール方法です。Edge やその他のブラウザでは方法が異なる可能性があります。
+
+**📌 ZIP ファイルは Release タブからダウンロードできます：**  
+👉 https://github.com/kyonshi0104/GitHue/releases
 
 1. このリポジトリを **Clone** または **ZIP ダウンロード**  
+   （※ ZIP は上記 Release ページから取得するのが推奨です）
 2. ZIP を解凍（または Clone したフォルダをそのまま使用）  
 3. Chrome または Edge を開く  
 4. アドレスバーに以下を入力  
@@ -57,8 +67,13 @@ Currently, the extension **supports Japanese only**.
 ---
 
 ## 📥 Installation
+This is the installation method for Google Chrome. The method may differ for Edge and other browsers.
+
+**📌 You can download the ZIP file from the Release tab:**  
+👉 https://github.com/kyonshi0104/GitHue/releases
 
 1. Clone this repository or download the ZIP  
+   (Downloading from the Release page above is recommended)
 2. Extract the ZIP (or use the cloned folder directly)  
 3. Open Chrome or Edge  
 4. Enter the following in the address bar:  
