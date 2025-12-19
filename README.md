@@ -1,0 +1,139 @@
+※ English version is available below.
+
+# Githue
+GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
+
+<!-- バッジここに貼る -->
+<p align="left">
+  <img src="https://img.shields.io/badge/license-BSD--3--Clause-blue" alt="License: BSD-3-Clause">
+  <img src="https://img.shields.io/badge/Chrome-supported-brightgreen" alt="Chrome Supported">
+  <img src="https://img.shields.io/badge/Edge-supported-brightgreen" alt="Edge Supported">
+  <img src="https://img.shields.io/badge/language-Japanese_only-orange" alt="Language: Japanese Only">
+  <img src="https://img.shields.io/badge/status-active-success" alt="Status: Active">
+</p>
+## 📌 概要
+**Githue** は、GitHub のテーマカラーを自分好みに変更できる拡張機能です。  
+完全にクライアントサイドで動作し、外部サーバーへの通信は行いません。  
+現在は **日本語のみ対応** しています。
+
+- GitHub の配色を自由に調整  
+- ダーク/ライトテーマの微調整  
+- 完全クライアントサイドで安全  
+- Chrome / Edge で動作確認済み
+
+---
+
+## 📥 インストール方法（GitHub 配布版）
+Chrome ウェブストア公開前の暫定的なインストール方法です。
+
+1. このリポジトリを **Clone** または **ZIP ダウンロード**  
+2. ZIP を解凍（または Clone したフォルダをそのまま使用）  
+3. Chrome または Edge を開く  
+4. アドレスバーに以下を入力  
+   ```
+   chrome://extensions/
+   ```
+5. 右上の **「デベロッパーモード」** を ON  
+6. 左上の **「パッケージ化されていない拡張機能を読み込む」** をクリック  
+7. 解凍したフォルダ（`manifest.json` が入っているフォルダ）を選択  
+8. 拡張機能が読み込まれたら完了
+
+---
+
+## 🖼 スクリーンショット
+（※ 後で画像を追加してください）
+
+```
+/screenshots/
+  ├── screenshot1.png
+  ├── screenshot2.png
+  └── screenshot3.png
+```
+
+例：
+```
+![Screenshot 1](screenshots/screenshot1.png)
+![Screenshot 2](screenshots/screenshot2.png)
+```
+
+---
+
+## 🧩 今後の予定
+- Chrome ウェブストアでの公開  
+- 英語 UI の追加  
+- カラープリセット機能の追加  
+- より細かい GitHub UI のカスタマイズ
+
+---
+
+## 📄 ライセンス
+このプロジェクトは **BSD-3-Clause License** のもとで公開されています。  
+詳細は `LICENSE` ファイルをご確認ください。
+
+---
+
+# ———————————————————————  
+# 🌐 English Version  
+# ———————————————————————  
+
+# Githue
+A Chrome extension that lets you customize GitHub’s color theme
+
+## 📌 Overview
+**Githue** is a browser extension that allows you to freely customize GitHub’s color palette.  
+It works **entirely on the client side**, with **no external communication**.  
+Currently, the extension **supports Japanese only**.
+
+- Customize GitHub’s theme colors  
+- Fine‑tune dark/light themes  
+- Fully client‑side and safe  
+- Tested on Chrome and Edge
+
+---
+
+## 📥 Installation (GitHub distribution)
+This is a temporary installation method before publishing to the Chrome Web Store.
+
+1. Clone this repository or download the ZIP  
+2. Extract the ZIP (or use the cloned folder directly)  
+3. Open Chrome or Edge  
+4. Enter the following in the address bar:  
+   ```
+   chrome://extensions/
+   ```
+5. Turn on **Developer mode** (top right)  
+6. Click **Load unpacked**  
+7. Select the extracted folder (the one containing `manifest.json`)  
+8. The extension will be loaded and ready to use
+
+---
+
+## 🖼 Screenshots
+(Add images later)
+
+```
+/screenshots/
+  ├── screenshot1.png
+  ├── screenshot2.png
+  └── screenshot3.png
+```
+
+Example:
+```
+![Screenshot 1](screenshots/screenshot1.png)
+![Screenshot 2](screenshots/screenshot2.png)
+```
+
+---
+
+## 🧩 Future Plans
+- Publish on the Chrome Web Store  
+- Add English UI  
+- Add color presets  
+- More detailed GitHub UI customization
+
+---
+
+## 📄 License
+This project is released under the **BSD-3-Clause License**.  
+See the `LICENSE` file for details.
