@@ -1,6 +1,6 @@
 ※ English version is available below.
 
-# Githue
+# GitHue
 GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
 
 <p align="left">
@@ -12,7 +12,7 @@ GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
 </p>
 
 ## 📌 概要
-**Githue** は、GitHub のテーマカラーを変更できる拡張機能です。  
+**GitHue** は、GitHub のテーマカラーを変更できる拡張機能です。  
 現在は **日本語のみ対応** しています。
 
 - Chrome / Edge で動作確認済み
@@ -57,11 +57,11 @@ GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
 # 🌐 English Version  
 # ———————————————————————  
 
-# Githue
+# GitHue
 A Chrome extension that lets you customize GitHub’s color theme
 
 ## 📌 Overview
-**Githue** is a browser extension that allows you to customize GitHub’s color palette.  
+**GitHue** is a browser extension that allows you to customize GitHub’s color palette.  
 Currently, the extension **supports Japanese only**.
 
 - Tested on Chrome and Edge
