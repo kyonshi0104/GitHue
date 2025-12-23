@@ -3,14 +3,16 @@
 # GitHue
 GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
 
-<img width="400" height="400" alt="githue_logo" style="border-radius:10px;" src="https://github.com/user-attachments/assets/95562566-c67f-4d80-9550-3dcd31adb032" />
-
 <p align="left">
   <img src="https://img.shields.io/badge/license-BSD--3--Clause-blue" alt="License: BSD-3-Clause">
   <img src="https://img.shields.io/badge/Chrome-supported-brightgreen" alt="Chrome Supported">
   <img src="https://img.shields.io/badge/Edge-supported-brightgreen" alt="Edge Supported">
   <img src="https://img.shields.io/badge/language-Japanese_only-orange" alt="Language: Japanese Only">
   <img src="https://img.shields.io/badge/status-active-success" alt="Status: Active">
+</p>
+
+<p align="center">
+  <img width="400" height="400" alt="githue_logo" src="https://github.com/user-attachments/assets/95562566-c67f-4d80-9550-3dcd31adb032" />
 </p>
 
 ## 📌 概要
