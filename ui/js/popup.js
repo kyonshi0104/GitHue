@@ -1,3 +1,5 @@
+import { themeConfig } from "../../config/colors.js";
+
 // =============================
 // UI Switch
 // =============================
@@ -34,6 +36,32 @@ advanced_settings.addEventListener("click", () => {
     Array.from(advanced_menu).forEach(m => m.style.display = "block");
     Array.from(quick_menu).forEach(m => m.style.display = "none");
 });
+
+// =============================
+// Load advanced ui
+// =============================
+
+function renderAdvancedUI() {
+    const container = document.getElementById("advanced-settings-container");
+    if (container.innerHTML) {container.innerHTML = "";}
+
+    themeConfig.forEach(item => {
+        const row = document.createElement("div");
+        row.className = "setting-row";
+
+        const label = chrome.i18n.getMessage(item.label_key) || item.id.replace(/_/g, " ");
+
+        row.innerHTML = `
+            <p>${label}</p>
+            <div id="edit">
+                <input type="text" data-src="${item.variable}" spellcheck="false">
+                <div class="color_pallet"></div>
+                <input type="color" data-src="${item.variable}">
+            </div>
+        `;
+        container.appendChild(row);
+    });
+}
 
 
 // =============================
@@ -77,13 +105,20 @@ toggle.addEventListener("click", () => {
 // =============================
 async function getGithubTab() {
     return new Promise(resolve => {
-        chrome.tabs.query(
-            { url: "*://github.com/*" },
-            tabs => resolve(tabs[0] || null)
-        );
+        chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+            const activeTab = tabs[0];
+            if (activeTab && activeTab.url?.includes("github.com")) {
+                console.log("Found active GitHub tab:", activeTab.id);
+                resolve(activeTab);
+            } else {
+                chrome.tabs.query({ url: "https://github.com/*" }, allTabs => {
+                    console.log("GitHub tabs found by URL:", allTabs.length);
+                    resolve(allTabs[0] || null);
+                });
+            }
+        });
     });
 }
-
 
 // =============================
 // Theme Persistence
@@ -95,12 +130,19 @@ async function saveTheme(theme) {
 
 async function applyThemeToGithub(theme) {
     const tab = await getGithubTab();
-    if (!tab) return;
+    if (!tab) {
+        console.error("GitHub tab ga not found");
+        return;
+    }
 
-    chrome.tabs.sendMessage(tab.id, {
-        type: "applyTheme",
-        theme
-    });
+    try {
+        const response = await chrome.tabs.sendMessage(tab.id, {
+            type: "applyTheme",
+            theme
+        });
+    } catch (error) {
+        console.error("apply theme error:", error.message);
+    }
 }
 
 
@@ -111,8 +153,7 @@ async function updateAdvancedTheme(key, value) {
     const { currentTheme } = await chrome.storage.local.get("currentTheme");
     if (!currentTheme) return;
 
-    const [group, name] = key.split("-");
-    currentTheme[group][name] = value;
+    currentTheme[key] = value;
 
     await saveTheme(currentTheme);
     await applyThemeToGithub(currentTheme);
@@ -196,45 +237,18 @@ function generateTheme(baseBg, baseFg) {
     const bg = hexToHsl(baseBg);
     const fg = hexToHsl(baseFg);
 
-    return {
-        bgColor: {
-            default: baseBg,
-            muted: adjust(bg, { dl: -0.08 }),
-            inset: adjust(bg, { dl: -0.15 }),
-            emphasis: adjust(bg, { dl: +0.10 }),
-            overlay: adjust(bg, { dl: -0.05 }),
-            attention: "#ae7c1426",
-            success: "#347d39",
-            danger: "#c93c37",
-            highlight: adjust(bg, { dl: +0.20 }),
-            primer: adjust(bg, { dl: -0.12 })
-        },
-        fgColor: {
-            default: baseFg,
-            muted: adjust(fg, { ds: -0.3 }),
-            subtle: adjust(fg, { ds: -0.5, dl: +0.1 }),
-            onEmphasis: "#ffffff",
-            link: adjust(fg, { dh: +0.1 }),
-            white: "#ffffff",
-            disabled: adjust(fg, { ds: -0.5, dl: -0.2 }),
-            success: "#57ab5a",
-            danger: "#e5534b",
-            attention: "#c69026"
-        },
-        borderColor: {
-            default: adjust(bg, { dl: -0.25 }),
-            muted: adjust(bg, { dl: -0.35 }),
-            subtle: adjust(bg, { dl: -0.45 }),
-            emphasis: adjust(bg, { dl: -0.15 }),
-            overlay: adjust(bg, { dl: -0.20 }),
-            divider: adjust(bg, { dl: -0.30 }),
-            success: "#347d39",
-            danger: "#c93c37",
-            attention: "#966600"
-        }
-    };
-}
+    const theme = {};
 
+    themeConfig.forEach(item => {
+        if (typeof item.compute === 'function') {
+            theme[item.variable] = item.compute(bg, fg);
+        } else {
+            theme[item.variable] = null
+        }
+    });
+
+    return theme;
+}
 
 // =============================
 // Quick Theme Update
@@ -254,60 +268,7 @@ async function updateQuickTheme() {
 }
 
 
-// =============================
-// Color Input Synchronization
-// =============================
-document.querySelectorAll(".color_pallet").forEach(el => {
-    el.addEventListener("click", () => {
-        const parent = el.parentElement;
-        const targetInput = parent.querySelector('input[type="color"]');
 
-        if (targetInput) {
-            targetInput.click();
-        }
-    });
-});
-
-
-document.querySelectorAll('input[type=color]').forEach(el => {
-    el.addEventListener("input", () => {
-        const inputcolor = el.value;
-        const parent = el.parentElement;
-
-        const pallet = parent.querySelector(".color_pallet");
-        const text = parent.querySelector('input[type=text]');
-
-        if (pallet && text) {
-            pallet.style.background = inputcolor;
-            text.value = inputcolor;
-        }
-
-        const key = el.dataset.src;
-        if (key) {
-            updateAdvancedTheme(key, inputcolor);
-        }
-
-        if (el.id === "quickBg" || el.id === "quickFg") {
-            updateQuickTheme();
-        }
-    });
-});
-
-
-document.querySelectorAll('input[type=text]').forEach(el => {
-    el.addEventListener("input", () => {
-        const inputtext = el.value;
-        const parent = el.parentElement;
-
-        const pallet = parent.querySelector(".color_pallet");
-        const color = parent.querySelector('input[type=color]');
-
-        if (pallet && color && isValidColor.test(inputtext)) {
-            color.value = inputtext;
-            color.dispatchEvent(new Event("input"));
-        }
-    });
-});
 
 
 // =============================
@@ -319,7 +280,6 @@ async function loadThemeIntoUI() {
 
     chrome.storage.sync.get("enabled", data => {
         const toggle_value = Boolean(data.enabled);
-
         if (toggle_value) {
             toggle.classList.add("enabled");
             grayout.style.display = "none";
@@ -328,9 +288,7 @@ async function loadThemeIntoUI() {
 
     document.querySelectorAll("input[data-src]").forEach(input => {
         const key = input.dataset.src;
-        const [group, name] = key.split("-");
-
-        const value = currentTheme[group]?.[name];
+        const value = currentTheme[key];
         if (!value) return;
 
         input.value = value;
@@ -348,27 +306,74 @@ async function loadThemeIntoUI() {
     const quickBg = document.getElementById("quickBg");
     const quickFg = document.getElementById("quickFg");
 
-    if (quickBg && currentTheme.bgColor?.default) {
-        quickBg.value = currentTheme.bgColor.default;
-
+    if (quickBg && currentTheme["--bgColor-default"]) {
+        const val = currentTheme["--bgColor-default"];
+        quickBg.value = val;
         const parent = quickBg.parentElement;
         const pallet = parent.querySelector(".color_pallet");
         const text = parent.querySelector('input[type=text]');
-
-        if (pallet) pallet.style.background = currentTheme.bgColor.default;
-        if (text) text.value = currentTheme.bgColor.default;
+        if (pallet) pallet.style.background = val;
+        if (text) text.value = val;
     }
 
-    if (quickFg && currentTheme.fgColor?.default) {
-        quickFg.value = currentTheme.fgColor.default;
-
+    if (quickFg && currentTheme["--fgColor-default"]) {
+        const val = currentTheme["--fgColor-default"];
+        quickFg.value = val;
         const parent = quickFg.parentElement;
         const pallet = parent.querySelector(".color_pallet");
         const text = parent.querySelector('input[type=text]');
-
-        if (pallet) pallet.style.background = currentTheme.fgColor.default;
-        if (text) text.value = currentTheme.fgColor.default;
+        if (pallet) pallet.style.background = val;
+        if (text) text.value = val;
     }
+
+    // =============================
+    // Color Input Synchronization
+    // =============================
+
+    document.querySelectorAll(".color_pallet").forEach(el => {
+        el.addEventListener("click", () => {
+            const parent = el.parentElement;
+            const targetInput = parent.querySelector('input[type="color"]');
+            if (targetInput) targetInput.click();
+        });
+    });
+
+    document.querySelectorAll('input[type=color]').forEach(el => {
+        el.addEventListener("input", () => {
+            const inputcolor = el.value;
+            const parent = el.parentElement;
+            const pallet = parent.querySelector(".color_pallet");
+            const text = parent.querySelector('input[type=text]');
+
+            if (pallet && text) {
+                pallet.style.background = inputcolor;
+                text.value = inputcolor;
+            }
+
+            const key = el.dataset.src;
+            if (key) {
+                updateAdvancedTheme(key, inputcolor);
+            }
+
+            if (el.id === "quickBg" || el.id === "quickFg") {
+                updateQuickTheme();
+            }
+        });
+    });
+
+    document.querySelectorAll('input[type=text]').forEach(el => {
+        el.addEventListener("input", () => {
+            const inputtext = el.value;
+            const parent = el.parentElement;
+            const pallet = parent.querySelector(".color_pallet");
+            const color = parent.querySelector('input[type=color]');
+
+            if (pallet && color && isValidColor.test(inputtext)) {
+                color.value = inputtext;
+                color.dispatchEvent(new Event("input"));
+            }
+        });
+    });
 }
 
 
@@ -381,7 +386,7 @@ async function loadThemeIntoUI() {
     if (!tab) {
         document.body.innerHTML = `
             <div style="padding:20px;">
-                <p>GitHub を開いてから再度この拡張を開いてください。</p>
+                <p>GitHub を開いてから再度この拡張機能を開いてください。</p>
                 <button id="open">GitHub を開く</button>
             </div>
         `;
@@ -391,5 +396,6 @@ async function loadThemeIntoUI() {
         };
     }
 
+    await renderAdvancedUI()
     await loadThemeIntoUI();
 })();
