@@ -11,17 +11,15 @@ GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
   <img src="https://img.shields.io/badge/status-active-success" alt="Status: Active">
 </p>
 
-## 📌 概要
+## 概要
 **GitHue** は、GitHub のテーマカラーを変更できる拡張機能です。
-現在は **日本語のみ対応** しています。
+現在は日本語と英語に対応しています。
 
 - Chrome / Edge で動作確認済み
 
-※本バージョンは初期リリースです。今後のアップデートにて、機能追加やUI改善などを継続的に行っていきます。
-
 ---
 
-## 🖼 画像
+## 画像
 <p align="center">
   <img width="400" height="400" alt="githue_logo" src="https://github.com/user-attachments/assets/95562566-c67f-4d80-9550-3dcd31adb032" />
   <img width="1919" height="990" alt="image" src="https://github.com/user-attachments/assets/dc9cc320-811f-4e94-89b1-149e1cd14f81" />
@@ -29,11 +27,11 @@ GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
 
 ---
 
-## 📥 インストール方法
+## インストール方法
 これは Google Chrome におけるインストール方法です。Edge やその他のブラウザでは方法が異なる可能性があります。
 
-**📌 ZIP ファイルは Release タブからダウンロードできます：**
-👉 https://github.com/kyonshi0104/GitHue/releases
+** ZIP ファイルは Release タブからダウンロードできます：**
+https://github.com/kyonshi0104/GitHue/releases
 
 1. このリポジトリを **Clone** または **ZIP ダウンロード**
    （※ ZIP は上記 Release ページから取得するのが推奨です）
@@ -50,7 +48,7 @@ GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
 
 ---
 
-## 📄 ライセンス
+## ライセンス
 このプロジェクトは **BSD-3-Clause License** のもとで公開されています。
 詳細は `LICENSE` ファイルをご確認ください。
 
@@ -63,21 +61,18 @@ GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
 # GitHue
 A Chrome extension that lets you customize GitHub’s color theme
 
-## 📌 Overview
+## Overview
 **GitHue** is a browser extension that allows you to customize GitHub’s color palette.
-Currently, the extension **supports Japanese only**.
 
 - Tested on Chrome and Edge
 
-※This version marks the first public release. We plan to expand functionality and enhance the UI over time.
-
 ---
 
-## 📥 Installation
+## Installation
 This is the installation method for Google Chrome. The method may differ for Edge and other browsers.
 
-**📌 You can download the ZIP file from the Release tab:**
-👉 https://github.com/kyonshi0104/GitHue/releases
+**You can download the ZIP file from the Release tab:**
+https://github.com/kyonshi0104/GitHue/releases
 
 1. Clone this repository or download the ZIP
    (Downloading from the Release page above is recommended)
@@ -94,6 +89,6 @@ This is the installation method for Google Chrome. The method may differ for Edg
 
 ---
 
-## 📄 License
+## License
 This project is released under the **BSD-3-Clause License**.
 See the `LICENSE` file for details.
