@@ -33,6 +33,8 @@ async function applyTheme(theme) {
             document.documentElement.style.setProperty(variable, value);
         }
     }
+
+    document.querySelector('meta[name="theme-color"]').content = theme["--borderColor-default"];
 }
 
 async function applyCurrentTheme() {
@@ -73,6 +75,7 @@ function restoreDefaultTheme() {
     themeConfig.forEach(item => {
         root.style.removeProperty(item.variable);
     });
+    document.querySelector('meta[name="theme-color"]').content = '#1e2327';
 }
 
 // =============================
