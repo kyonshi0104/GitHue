@@ -11,6 +11,13 @@ GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
   <img src="https://img.shields.io/badge/status-active-success" alt="Status: Active">
 </p>
 
+> [!IMPORTANT]
+> この拡張機能はGitHubの公式作品ではありません。
+> 
+> GitHub及びMicrosoftとは関係が無く、公認・監修を受けていません。
+> 
+> This extension is not an official GitHub product. It is not affiliated with, nor endorsed or sponsored by, GitHub or Microsoft.
+
 ## 概要
 **GitHue** は、GitHub のテーマカラーを変更できる拡張機能です。
 現在は日本語と英語に対応しています。
