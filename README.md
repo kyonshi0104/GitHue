@@ -12,9 +12,9 @@ GitHub の配色を自由にカスタマイズできる Chrome 拡張機能
 </p>
 
 > [!IMPORTANT]
-> この拡張機能はGitHubの公式作品ではありません。
+> この拡張機能はGitHubの公式製品ではありません。
 > 
-> GitHub及びMicrosoftとは関係が無く、公認・監修を受けていません。
+> GitHub及びMicrosoftとは一切関係なく、公認や監修を受けたものではありません。
 > 
 > This extension is not an official GitHub product. It is not affiliated with, nor endorsed or sponsored by, GitHub or Microsoft.
 
